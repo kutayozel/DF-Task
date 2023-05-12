@@ -36,11 +36,15 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 
 html, body {
     font-family: 'ITCAvantGardePro', sans-serif;
+}
+
+img {
+    max-width: 100%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -49,207 +53,244 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-    font-size: 61px;
+    font-size: 39.06px;
     line-height: 120%;
-    text-transform: capitalize;
 }
 
 h2 {
-    font-size: 48.828px;
+    font-size: 31.25px;
     line-height: 120%;
 }
 
 h3 {
-    font-size: 39.063px;
-    line-height: 130%;
-}
-
-h4 {
-    font-size: 31.25px;
-    line-height: 130%;
-}
-
-h5 {
     font-size: 25px;
-    line-height: 140%;
+    line-height: 130%;
+}
+
+h4, h5 {
+    font-size: 20px;
+    color: white;
+    line-height: 130%;
 }
 
 h6 {
     font-family: 'Avenir';
     font-weight: 400;
     font-style: normal;
-    font-size: 20px;
     line-height: 160%;
-}
-
-button {
-    font-family: 'Avenir';
-    font-style: normal;
-    font-weight: 800;
     font-size: 16px;
-    line-height: 22px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 a {
     font-family: 'Avenir';
     font-style: normal;
     font-weight: 800;
-    font-size: 16px;
-    line-height: 22px;
-    text-transform: capitalize;
+    font-size: 12.8px;
+    line-height: 17px;
+    color: white;
+    text-decoration: none;
     padding-bottom: 5px;
-    box-shadow: 0px 1px 0px #E6E6E6;
-}
-
-img {
-    max-width: 100%;
+    box-shadow: 0px 1px 0px #FFFFFF;
+    display: inline-block;
+    text-transform: capitalize;
 }
 
 /* PAGE */
 
 .sec {
-    /* overflow: hidden; */
-    width: 100vw;
+    position: relative;
+    height: 100vh;
+    overflow-y: auto;
 }
 
-.layout {
-    /* overflow: hidden; */
+.sec2 {
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 10px;
+    overflow-x: hidden;
+}
+
+.texts {
+    padding: 0 24px;
 }
 
 .headerText {
+    margin-bottom: 16px;
+    padding-right: 50px;
+    width: 338px;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2), 1px -1px 0 rgba(0, 0, 0, 0.2), -1px 1px 0 rgba(0, 0, 0, 0.2), 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
 
+.subText {
+    display: none;
 }
 
 .linkText {
-
+    margin-bottom: 33px;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2), 1px -1px 0 rgba(0, 0, 0, 0.2), -1px 1px 0 rgba(0, 0, 0, 0.2), 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* SLIDER */
 
 .slider {
+    display: flex;
+    gap: 12px;
+    transition: transform 0.5s ease-out;
+    padding: 0 24px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 
+.slider::-webkit-scrollbar {
+    display: none;
 }
 
 .product {
-
+    min-width: 148px;
 }
 
 .productText {
-
+    color: #000000;
+    font-family: 'Avenir';
+    font-size: 12.8px;
+    line-height: 160%;
+    margin-bottom: 4px;
 }
 
 .productPrice {
-
+    font-family: 'Avenir';
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 160%;
+    margin-bottom: 9px;
 }
 
-@media screen and (max-width: 767px) {
-    h1 {
-        font-size: 39.06px;
-    }
+.colorSelection {
+    display: flex;
+    gap: 7px;
+}
 
+.productColor {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1.5px solid #FFFFFF;
+    cursor: pointer;
+    padding: 0.1px;
+}
+
+.productColor.selected {
+    border: 1px solid #000000;
+  }
+
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 61px;
+        text-transform: capitalize;
+    }
+    
     h2 {
+        font-size: 48.828px;
+    }
+    
+    h3 {
+        font-size: 39.063px;
+    }
+    
+    h4 {
         font-size: 31.25px;
     }
-
-    h3 {
+    
+    h5 {
         font-size: 25px;
     }
-
-    h4, h5 {
-        font-size: 20px;
-        color: white;
-    }
-
+    
     h6 {
-        font-size: 16px;
+        font-size: 20px;
     }
-
-    button {
-        font-size: 12.8px;
-        line-height: 17px;
-    }
-
+    
     a {
-        font-size: 12.8px;
-        line-height: 17px;
-        color: white;
-        text-decoration: none;
-        padding-bottom: 5px;
-        box-shadow: 0px 1px 0px #E6E6E6;
-        display: inline-block;
+        font-size: 16px;
+        line-height: 22px;
+        box-shadow: 0px 1px 0px #000000;
     }
-
+    
+    /* MIN1024 PAGE */
+    
     .sec {
-        position: relative;
+        position: static;
+        display: flex;
         height: 100vh;
-        width: 100vw;
-        overflow-x: hidden;
-    }
-
-    .layout {
-        position: absolute;
-        width: 100%;
-        /* z-index: 50; */
-        padding: 0 24px;
-        text-align: left;
-        top: 248px;
         overflow: hidden;
     }
 
+    .sec1 {
+        flex: 1;
+    }
+
+    .sec1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .sec2 {
+        position: static;
+        flex: 1;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .texts {
+        margin-top: 96px;
+        padding: 0 113px;
+    }
+    
     .headerText {
-        margin-bottom: 16px;
-    }
-
-    .linkText {
-        margin-bottom: 33px;
-    }
-
-    /* SLIDER */
-
-    .slider {
-        display: flex;
-        gap: 12px;
-        width: max-content;
-        overflow-x: auto;
-    }
-
-    .product {
-        width: 148px;
-    }
-
-    .productText {
         color: #000000;
-        font-family: 'Avenir';
-        font-size: 12.8px;
-        line-height: 160%;
-        margin-bottom: 4px;
+        margin-bottom: 12px;
+        width: 100%;
     }
 
-    .productPrice {
+    .subText {
+        display: block;
+        color: #666666;
         font-family: 'Avenir';
-        font-weight: 500;
-        font-size: 13px;
-        line-height: 160%;
-        margin-bottom: 9px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 25px;
+        padding-right: 55px;
+        margin-bottom: 28px;
+    }
+    
+    .linkText {
+        color: #000000;
+        margin-bottom: 74px;
+        text-shadow: none;
+    }
+    
+    /* MIN1024 SLIDER */
+    
+    .slider {
+        padding: 0 30px 0 113px;
+        gap: 32px;
+    }
+    
+    .product {
+        min-width: 230px;
     }
 
-    .colorSelection {
+    .price-color {
         display: flex;
-        gap: 7px;
+        justify-content: space-between;
     }
+}
 
-    .productColor {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        border: 1.5px solid #FFFFFF;
-        cursor: pointer;
-        padding: 0.1px;
+@media screen and (min-width: 1573px) {
+    .sec1 img {
+        object-fit: fill;
     }
-
-    .productColor.selected {
-        border: 1px solid #000000;
-      }
 }
