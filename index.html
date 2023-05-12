@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="alo.css" />
+    <title>DigiFist Task</title>
+  </head>
+  <body>
+    <section class="sec">
+      <div class="sec1">
+        <img src="/assets/hero.png" alt="hero img" />
+      </div>
+
+      <div class="sec2">
+        <div class="texts">
+          <h4 class="headerText">
+            Everyday tops, we have something to suit every occasion.
+          </h4>
+          <div class="subText">
+            At suspendisse augue lectus arcu, accumsan ut sit posuere vitae sit
+            tincidunt semper eu proin leo gravida cursus.
+          </div>
+          <a class="linkText" href="#">Shop All Everyday Items</a>
+        </div>
+
+        <div class="slider">
+          <div class="product">
+            <div style="margin-bottom: 8px">
+              <img src="/assets/product1.png" alt="green hoodie" />
+            </div>
+            <div class="productText">365 Signature Hoodie</div>
+            <div class="price-color">
+              <div class="productPrice">€33.95</div>
+              <div class="colorSelection">
+                <div
+                  class="productColor selected"
+                  style="background-color: #99c3cc"
+                ></div>
+                <div
+                  class="productColor"
+                  style="background-color: #cc9999"
+                ></div>
+                <div
+                  class="productColor"
+                  style="background-color: #cb99cc"
+                ></div>
+                <div
+                  class="productColor"
+                  style="background-color: #bcd9b2"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div style="margin-bottom: 8px">
+              <img src="/assets/product2.png" alt="yellow pants" />
+            </div>
+            <div class="productText">Organic Skinny High Waist Jeans</div>
+            <div class="price-color">
+              <div class="productPrice">€33.95</div>
+              <div class="colorSelection">
+                <div
+                  class="productColor selected"
+                  style="background-color: #99c3cc"
+                ></div>
+                <div
+                  class="productColor"
+                  style="background-color: #cc9999"
+                ></div>
+                <div
+                  class="productColor"
+                  style="background-color: #cb99cc"
+                ></div>
+                <div
+                  class="productColor"
+                  style="background-color: #bcd9b2"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div style="margin-bottom: 8px">
+              <img src="/assets/product3.png" alt="blue hoodie" />
+            </div>
+            <div class="productText">365 Signature Organic Hoodie</div>
+            <div class="price-color">
+              <div class="productPrice">€33.95</div>
+              <div class="colorSelection">
+                <div
+                  class="productColor selected"
+                  style="background-color: #99c3cc"
+                ></div>
+                <div
+                  class="productColor"
+                  style="background-color: #cc9999"
+                ></div>
+                <div
+                  class="productColor"
+                  style="background-color: #cb99cc"
+                ></div>
+                <div
+                  class="productColor"
+                  style="background-color: #bcd9b2"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // POSITION SEC2 DYNAMIC ACC TO W.HEIGHT
+      function updatePosition() {
+        if (window.matchMedia("(max-width: 1024px)").matches) {
+          const vh = window.innerHeight;
+          const position = Math.round(vh * 0.32);
+
+          const div = document.querySelector(".sec2");
+          div.style.top = `${position}px`;
+          console.log();
+        }
+      }
+      updatePosition();
+      window.addEventListener("resize", updatePosition);
+
+      // PRODUCT COLOR SELECTIONS
+      const colorSelections = document.querySelectorAll(".colorSelection");
+
+      colorSelections.forEach((colorSelection) => {
+        const colorElements = colorSelection.querySelectorAll(".productColor");
+
+        colorElements.forEach((colorElement) => {
+          colorElement.addEventListener("click", () => {
+            colorElements.forEach((element) => {
+              element.classList.remove("selected");
+            });
+            colorElement.classList.add("selected");
+          });
+        });
+      });
+
+      // SLIDER
+      const slider = document.querySelector(".slider");
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", (e) => {
+        if (e.button === 0) {
+          isDown = true;
+          slider.classList.add("active");
+          startX = e.pageX - slider.offsetLeft;
+          scrollLeft = slider.scrollLeft;
+        }
+      });
+
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+        slider.classList.remove("active");
+      });
+
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+        slider.classList.remove("active");
+      });
+
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      slider.addEventListener("touchstart", (e) => {
+        isDown = true;
+        slider.classList.add("active");
+        startX = e.touches[0].pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener("touchend", () => {
+        isDown = false;
+        slider.classList.remove("active");
+      });
+
+      slider.addEventListener("touchcancel", () => {
+        isDown = false;
+        slider.classList.remove("active");
+      });
+
+      slider.addEventListener("touchmove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.touches[0].pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    </script>
+  </body>
+</html>

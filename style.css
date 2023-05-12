@@ -1,0 +1,255 @@
+@font-face {
+    font-family: 'ITCAvantGardePro';
+    src: url('fonts/ITCAvantGardePro-Bk.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCAvantGardePro';
+    src: url('fonts/ITCAvantGardePro-Bold.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCAvantGardePro';
+    src: url('fonts/ITCAvantGardePro-Demi.otf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCAvantGardePro';
+    src: url('fonts/ITCAvantGardePro-Md.otf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('fonts/Avenir.ttc');
+}
+
+/* GENERAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+html, body {
+    font-family: 'ITCAvantGardePro', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-style: normal;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 61px;
+    line-height: 120%;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-size: 48.828px;
+    line-height: 120%;
+}
+
+h3 {
+    font-size: 39.063px;
+    line-height: 130%;
+}
+
+h4 {
+    font-size: 31.25px;
+    line-height: 130%;
+}
+
+h5 {
+    font-size: 25px;
+    line-height: 140%;
+}
+
+h6 {
+    font-family: 'Avenir';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 160%;
+}
+
+button {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+a {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: capitalize;
+    padding-bottom: 5px;
+    box-shadow: 0px 1px 0px #E6E6E6;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* PAGE */
+
+.sec {
+    /* overflow: hidden; */
+    width: 100vw;
+}
+
+.layout {
+    /* overflow: hidden; */
+}
+
+.headerText {
+
+}
+
+.linkText {
+
+}
+
+/* SLIDER */
+
+.slider {
+
+}
+
+.product {
+
+}
+
+.productText {
+
+}
+
+.productPrice {
+
+}
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 39.06px;
+    }
+
+    h2 {
+        font-size: 31.25px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    h4, h5 {
+        font-size: 20px;
+        color: white;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 12.8px;
+        line-height: 17px;
+    }
+
+    a {
+        font-size: 12.8px;
+        line-height: 17px;
+        color: white;
+        text-decoration: none;
+        padding-bottom: 5px;
+        box-shadow: 0px 1px 0px #E6E6E6;
+        display: inline-block;
+    }
+
+    .sec {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .layout {
+        position: absolute;
+        width: 100%;
+        /* z-index: 50; */
+        padding: 0 24px;
+        text-align: left;
+        top: 248px;
+        overflow: hidden;
+    }
+
+    .headerText {
+        margin-bottom: 16px;
+    }
+
+    .linkText {
+        margin-bottom: 33px;
+    }
+
+    /* SLIDER */
+
+    .slider {
+        display: flex;
+        gap: 12px;
+        width: max-content;
+        overflow-x: auto;
+    }
+
+    .product {
+        width: 148px;
+    }
+
+    .productText {
+        color: #000000;
+        font-family: 'Avenir';
+        font-size: 12.8px;
+        line-height: 160%;
+        margin-bottom: 4px;
+    }
+
+    .productPrice {
+        font-family: 'Avenir';
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 160%;
+        margin-bottom: 9px;
+    }
+
+    .colorSelection {
+        display: flex;
+        gap: 7px;
+    }
+
+    .productColor {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1.5px solid #FFFFFF;
+        cursor: pointer;
+        padding: 0.1px;
+    }
+
+    .productColor.selected {
+        border: 1px solid #000000;
+      }
+}
