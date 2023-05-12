@@ -253,6 +253,7 @@ a {
         color: #000000;
         margin-bottom: 12px;
         width: 100%;
+        text-shadow: none;
     }
 
     .subText {
